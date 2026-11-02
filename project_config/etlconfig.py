@@ -1,0 +1,14 @@
+
+
+# database connection
+ORACLE_USER = "system"
+ORACLE_PASSWORD = "admin"
+ORACLE_HOST = "localhost"
+ORACLE_PORT = 1521
+ORACLE_SERVICE = "xe"
+
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "Admin%40143"
+MYSQL_HOST = "localhost"
+MYSQL_PORT = 3308
+MYSQL_DATBASE = "aug2026_project"
