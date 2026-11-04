@@ -1,3 +1,6 @@
 # 1. Develop DE code for all the remaining files(4)
 # 2. Devlop a utility function for reading from database(oracle)
 # 3. Develop DE code for stores data
+
+# Transfromation:
+1. In Inventory agrregator , just get total sum for each stores ( store_id,sum(quantity_on_hand)
