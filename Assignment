@@ -4,3 +4,7 @@
 
 # Transfromation:
 1. In Inventory agrregator , just get total sum for each stores ( store_id,sum(quantity_on_hand)
+
+# Loading
+1. Implement logger functionality in all the codesbase ( DE,DT,DL)
+2. Implement data loading for remaining 3 target tables

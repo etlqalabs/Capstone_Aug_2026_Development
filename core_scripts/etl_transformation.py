@@ -8,7 +8,7 @@ from project_config.etlconfig import *
 logging.basicConfig(
     filename='application_log/etlprocess.log',
     filemode='w',
-    format='%(asctime)s-%(levelname)s-s%(message)s',
+    format='%(asctime)s-%(levelname)s-%(message)s',
     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -63,6 +63,7 @@ class DataTransformation:
         df = pd.read_sql(query, mysql_conn)
         df.to_sql("aggregated_inventory_level", mysql_conn, index=False, if_exists='replace')
         logger.info("Aggregator Transformation  process for inventory  has competed... ")
+
 
 
 if __name__ == "__main__":

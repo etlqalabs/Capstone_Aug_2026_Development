@@ -1,0 +1,6 @@
+2026-11-05 08:32:54,269-INFO-File download from linux server has started....
+2026-11-05 08:32:54,458-INFO-Connected (version 2.0, client OpenSSH_8.7)
+2026-11-05 08:32:54,788-INFO-Authentication (password) successful!
+2026-11-05 08:32:55,686-INFO-[chan 0] Opened sftp connection (server version 3)
+2026-11-05 08:32:55,950-INFO-[chan 0] sftp session closed.
+2026-11-05 08:32:55,951-INFO-File download from linux server has completed....
