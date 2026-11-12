@@ -29,19 +29,44 @@ class DataLoading:
             conn.commit()
         logger.info("Data loading in fact_sales tables has completed... ")
 
-
     def load_fact_inventory_table(self):
-        pass
+            logger.info("Data Loading in fact_inventory started...")
+
+            query = text("""insert into fact_inventory(product_id,store_id,quantity_on_hand,last_updated) 
+                select product_id,store_id,quantity_on_hand,last_updated from stag_inventory""")
+            with mysql_conn.connect() as conn:
+                logger.info(query)
+                conn.execute(query)
+                conn.commit()
+            logger.info("Data Loading in fact_inventory completed...")
 
     def load_monthly_sales_summary_table(self):
-        pass
+            logger.info("Data Loading in monthly_sales_summary started...")
 
-    def load_inventory_levl_by_stores_table(self):
-        pass
+            query = text("""insert into monthly_sales_summary(product_id,year,month,total_sales ) 
+                            select product_id,year,month,total_sales from monthly_sales_summary_source""")
+            with mysql_conn.connect() as conn:
+                logger.info(query)
+                conn.execute(query)
+                conn.commit()
+            logger.info("Data Loading in monthly_sales_summary completed...")
+
+    def load_inventory_level_bys_stores_table(self):
+            logger.info("Data Loading in inventory_level_bys_stores started...")
+
+            query = text("""insert into inventory_levels_by_store(store_id,total_inventory) 
+                            select store_id,total_inventory from  aggregated_inventory_level""")
+            with mysql_conn.connect() as conn:
+                logger.info(query)
+                conn.execute(query)
+                conn.commit()
+            logger.info("Data Loading in inventory_level_bys_stores completed...")
+
 
 
 if __name__ == "__main__":
     dl = DataLoading()
     dl.load_fact_sales_table()
-
-
+    dl.load_fact_inventory_table()
+    dl.load_monthly_sales_summary_table()
+    dl.load_inventory_level_bys_stores_table()
